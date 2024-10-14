@@ -3,7 +3,7 @@ const generate = document.querySelector(".generate");
 generate.addEventListener("click", () => {
   let randomIndex = Math.floor(Math.random() * 6);
 
-  fetch("/assets/js/data.json")
+  fetch("data.json")
     .then((response) => response.json())
     .then((data) => changeVerse(data));
 });

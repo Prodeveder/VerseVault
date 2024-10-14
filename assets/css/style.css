@@ -1,0 +1,196 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+  font-family: font;
+  src: url(font/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+:root {
+  /* Colors */
+  --accent: #171c2a;
+  --secondary: #24293e;
+  --primary: #5e6a91;
+  --white: #ffffff;
+}
+
+/* The Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  height: 100vh;
+
+  background: var(--accent);
+  font-family: font;
+}
+
+/* Header Wrapper */
+.header__wrapper {
+  width: 90%;
+  max-width: 375px;
+  min-width: 315px;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/* Header Wrapper Title*/
+.header__wrapper .title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__wrapper .title span {
+  background: var(--accent);
+  padding: 0.5rem 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: snow;
+  font-size: 1.5rem;
+}
+
+/* Header Wrapper Line*/
+.line {
+  width: 100%;
+  border: none;
+  height: 0.1rem;
+  background: var(--primary);
+}
+
+/* Card Wrapper */
+.card__wrapper {
+  width: 80%;
+  max-width: 475px;
+  min-width: 325px;
+
+  height: auto;
+
+  padding: 1.5rem 1rem;
+  background: var(--secondary);
+  border-radius: 0.1rem;
+  box-shadow: 0 0 10px rgb(0 0 0/ 0.1);
+  position: relative;
+}
+
+/* Card Content */
+.card__content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Card Text */
+.card__text {
+  width: 100%;
+  height: 145px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Card Text Text  */
+.card__text p {
+  padding: 0.5rem 0;
+  width: 75%;
+  color: snow;
+}
+
+/* Card Text Icon */
+.card__text i {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.card__text .left {
+  top: 0;
+  left: 0;
+}
+
+.card__text .right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Generate */
+.generate {
+  position: absolute;
+  bottom: -3.5rem;
+
+  width: 4rem;
+  height: 4rem;
+  background: var(--secondary);
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: snow;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgb(0 0 0/ 0.4);
+}
+
+.generate:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgb(0 0 0/ 0.2);
+  color: var(--accent);
+  background: var(--white);
+}
+
+.topic {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-width: 475px) {
+  /* Header Wrapper */
+  .card__wrapper {
+    min-width: 295px;
+  }
+
+  /* Card Text Icon */
+  .card__text i {
+    font-size: 2rem;
+  }
+
+  .card__text p {
+    width: 85%;
+  }
+
+  /* Card Text */
+  .card__text {
+    width: 100%;
+    height: 165px;
+  }
+}

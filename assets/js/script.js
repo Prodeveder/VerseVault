@@ -1,18 +1,17 @@
-const generate = document.querySelector(".generate");
+// Clear Local Storage 
+localStorage.clear();
 
-generate.addEventListener("click", () => {
-  let randomIndex = Math.floor(Math.random() * 6);
-
+const generateVerse = () => {
   fetch("https://prodeveder.github.io/VerseVault/assets/js/data.json")
     .then((response) => response.json())
     .then((data) => changeVerse(data));
-});
-
-const verseHeader = document.querySelector(".header__wrapper .title span");
-const verseText = document.querySelector(".card__text p");
-const verseTopic = document.querySelector(".topic");
+};
 
 const changeVerse = (data) => {
+  const verseHeader = document.querySelector(".header__wrapper .title span"),
+    verseText = document.querySelector(".card__text p"),
+    verseTopic = document.querySelector(".topic");
+
   let randomIndex = Math.floor(Math.random() * 9),
     randomIndexVerse = Math.floor(Math.random() * 5);
 
@@ -22,3 +21,5 @@ const changeVerse = (data) => {
     data.BibleVerses[randomIndex].verses[randomIndexVerse].text;
   verseTopic.textContent = data.BibleVerses[randomIndex].topic;
 };
+
+
